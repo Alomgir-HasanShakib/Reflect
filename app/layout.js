@@ -17,6 +17,7 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const last = 1
   return (
     <html lang="en">
       <body
