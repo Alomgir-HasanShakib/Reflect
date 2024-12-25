@@ -1,7 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
-import { Book, Calendar, ChevronRight, Lock, Sparkles } from "lucide-react";
+import {
+  BarChart2,
+  Book,
+  Calendar,
+  ChevronRight,
+  FileText,
+  Lock,
+  Sparkles,
+} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -97,12 +105,83 @@ export default function Home() {
                 <div className="h-12 w-12 bg-orange-100 rounded-full flex items-center justify-center mb-4">
                   <feature.icon className="h-6 w-6 text-orange-600" />
                 </div>
-                <h3 className="font-semibold text-xl text-orange-900 mb-2">{feature.title}</h3>
+                <h3 className="font-semibold text-xl text-orange-900 mb-2">
+                  {feature.title}
+                </h3>
                 <p className="text-orange-700">{feature.description}</p>
               </CardContent>
             </Card>
           ))}
         </section>
+        <div className="space-y-24 mt-24">
+          <div className="grid md:grid-cols-2 gap-12">
+            <div className="space-y-6">
+              <div className="h-12 w-12 bg-orange-100 rounded-full flex items-center justify-center">
+                <FileText className="h-6 w-6 text-orange-600" />
+              </div>
+              <h className="text-2xl font-bold text-orange-900">
+                Rich Text Editor
+              </h>
+              <p className="text-lg text-orange-700">
+                Express yourself fully with our powerful editor featuring:
+              </p>
+              <ul className="space-y-3">
+                <li className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-orange-400" />
+                  <span> Formate Text with ease</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-orange-400" />
+                  <span> Embade Links</span>
+                </li>
+              </ul>
+            </div>
+            <div className="space-y-4 bg-white rounded-2xl shadow-xl p-6 border border-orange-100">
+              <div className="flex gap-2 mb-6">
+                <div className="h-8 w-8 rounded bg-orange-100" />
+                <div className="h-8 w-8 rounded bg-orange-100" />
+                <div className="h-8 w-8 rounded bg-orange-100" />
+              </div>
+              <Skeleton className={"h-4 bg-orange-50 rounded w-3/4"} />
+              <Skeleton className={"h-4 bg-orange-50 rounded w-full"} />
+              <Skeleton className={"h-4 bg-orange-50 rounded w-2/3"} />
+              <Skeleton className={"h-4 bg-orange-50 rounded w-1/3"} />
+            </div>
+          </div>
+          <div>
+            <div className="grid md:grid-cols-2 gap-12">
+              <div className="space-y-4 bg-white rounded-2xl shadow-xl p-6 border border-orange-100">
+                <div className="h-40 bg-gradient-to-t from-orange-100 to-orange-50 rounded-lg"></div>
+                <div className="flex justify-between">
+                  <div className="h-4 w-16 bg-orange-100 rounded" />
+                  <div className="h-4 w-16 bg-orange-100 rounded" />
+                  <div className="h-4 w-16 bg-orange-100 rounded" />
+                </div>
+              </div>
+              <div className="space-y-6">
+                <div className="h-12 w-12 bg-orange-100 rounded-full flex items-center justify-center">
+                  <BarChart2 className="h-6 w-6 text-orange-600" />
+                </div>
+                <h className="text-2xl font-bold text-orange-900">
+                  Mood Analytics
+                </h>
+                <p className="text-lg text-orange-700">
+                  Track your emotinal journey with poweful Analytics:
+                </p>
+                <ul className="space-y-3">
+                  <li className="flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-orange-400" />
+                    <span>Visual Mood Trends</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-orange-400" />
+                    <span>Pattern recongnition</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
