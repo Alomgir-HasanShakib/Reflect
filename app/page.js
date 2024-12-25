@@ -1,4 +1,10 @@
 import TestimonialCarousel from "@/components/testimonialCarousel";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -13,6 +19,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import faqs from "@/data/faqs";
 
 const features = [
   {
@@ -190,6 +197,28 @@ export default function Home() {
         <TestimonialCarousel />
 
         {/* ********************************************Testomonial section end ********************************************** */}
+
+        {/* ********************************************FAQ section Start ********************************************** */}
+
+        <div className="mt-24">
+          <h2 className="text-3xl font-bold text-center text-orange-900 mb-12">
+            Frequently Asked Questions
+          </h2>
+          <Accordion type="single" collapsible className="w-full mx-auto">
+            {faqs.map((faq, idx) => (
+              <AccordionItem key={faq.q} value={`item-${idx}`}>
+                <AccordionTrigger className="text-orange-900 text-lg">
+                  {faq.q}
+                </AccordionTrigger>
+                <AccordionContent className="text-orange-700 ">
+                  {faq.a}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+
+        {/* ********************************************FAQ section end ********************************************** */}
       </div>
     </>
   );
