@@ -21,7 +21,7 @@ model User {
   imageUrl     String?
   collections  Collection[]
   entries      Entry[]
-  currentDraft Draft?       @relation(fields: [], references: [])
+  currentDraft Draft?
   createdAt    DateTime     @default(now())
   updatedAt    DateTime     @updatedAt
 }
