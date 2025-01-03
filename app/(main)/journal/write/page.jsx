@@ -126,15 +126,6 @@ const JournalEntryPage = () => {
           <label className="text-sm font-medium">
             Add to Collection (Optional)
           </label>
-
-          {/* <Controller
-            name="content"
-            control={control}
-            render={({ field }) => (
-              
-            )}
-          /> */}
-         
         </div>
         <div className="space-y-4 flex">
           <Button type="submit" variant="journal">
